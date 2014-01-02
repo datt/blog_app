@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Author</th>
     <th>Text</th>
   </tr>
 
@@ -11,6 +12,7 @@
     <td><%= post.title %></td>
     <td><%= post.author %></td>
     <td><%= post.text %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
   </tr>
   <% end %>
 </table>
