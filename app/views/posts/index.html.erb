@@ -1,0 +1,20 @@
+<h1>Listing all blogs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Text</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.author %></td>
+    <td><%= post.text %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', post_path(post) %></td>
+  </tr>
+  <% end %>
+</table>
