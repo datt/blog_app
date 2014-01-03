@@ -6,7 +6,7 @@
 <dd>
   <strong>Comment:</strong>
   <%= comment.body %>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
+  <%= link_to 'Remove', [comment.post, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </dd>
