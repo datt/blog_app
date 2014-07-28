@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+npm-debug.log
+public/npm-debug.log
+config/database.yml
+config/mongoid.yml
