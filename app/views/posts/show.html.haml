@@ -6,11 +6,24 @@
 %p
   %strong Text:
   = @post.text
-%tr
-  %h2 Comments
-%tr
-  %dl= render @post.comments
+%h2 Comments
+.comments
+  %ul.allComments
+    = render @comments
   %h3
     Add a comment:
-    \#{render "comments/form"}#{link_to 'Back', posts_path}
-    | #{link_to 'Edit', edit_post_path(@post)}
+    = render "comments/form"
+    = link_to 'Back', posts_path
+    = link_to 'Edit', edit_post_path(@post)
+
+%script{id: "commentTemplate", type: "text/html"}
+  %ul.allComments
+    {{#comments}}
+    %li
+      %strong Commenter:
+      {{commenter}}
+      .comment
+        %strong Comment:
+        {{body}}
+        %a{"data-confirm" => "Are you sure?", "data-method" => "delete", href: "/posts/{{post_id}}/comments/{{id}}", rel: "nofollow"} Remove
+    {{/comments}}

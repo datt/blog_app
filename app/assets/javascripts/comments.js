@@ -6,9 +6,14 @@ $(document).ready(function() {
       data: $(this).serialize(),
       dataType: "json",
       method: "POST",
-      complete: function(response) {
-        console.log("test json request: JSON response", response.responseJSON)
+      success: function(response) {
+        console.log("test json request: JSON response", response);
+        ghtml = Mustache.to_html($("#commentTemplate").html(), response);
+        console.log("test json request: generated html", ghtml);
+        $(".allComments").html(ghtml);
       }
     });
+    $("#new_comment")[0].reset();
+    return false;
   });
 });
