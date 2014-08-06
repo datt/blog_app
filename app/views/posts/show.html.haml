@@ -27,3 +27,5 @@
         {{body}}
         %a{"data-confirm" => "Are you sure?", "data-method" => "delete", href: "/posts/{{post_id}}/comments/{{id}}", rel: "nofollow"} Remove
     {{/comments}}
+
+= render "underscore_template"
