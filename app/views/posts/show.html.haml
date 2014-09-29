@@ -17,15 +17,14 @@
     = link_to 'Edit', edit_post_path(@post)
 
 %script{id: "commentTemplate", type: "text/html"}
-  %ul.allComments
-    {{#comments}}
-    %li
-      %strong Commenter:
-      {{commenter}}
-      .comment
-        %strong Comment:
-        {{body}}
-        %a{"data-confirm" => "Are you sure?", "data-method" => "delete", href: "/posts/{{post_id}}/comments/{{id}}", rel: "nofollow"} Remove
-    {{/comments}}
+  {{#comments}}
+  %li
+    %strong Commenter:
+    {{commenter}}
+    .comment
+      %strong Comment:
+      {{body}}
+      %a{"data-confirm" => "Are you sure?", "data-method" => "delete", href: "/posts/{{post_id}}/comments/{{id}}", rel: "nofollow"} Remove
+  {{/comments}}
 
 = render "underscore_template"

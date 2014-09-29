@@ -23,7 +23,7 @@ $(document).ready(function() {
       method: "POST",
       success: function(response) {
         console.log("test json request: JSON response", response);
-        renderUsingMustache(response);
+        renderUsingUnderscore(response);
       }
     });
     $("#new_comment")[0].reset();
