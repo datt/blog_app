@@ -5,6 +5,11 @@ BlogApp::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+  resources :search, only: [:index] do
+    collection do
+      post :posts
+    end
+  end
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 

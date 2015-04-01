@@ -1,0 +1,6 @@
+%h1 Search posts
+= form_tag posts_search_index_path, method: :post, class: "searchForm" do
+  %input.search-input{:placeholder => "Enter keywords here", :type => "text", name: "fulltext"}
+  %input.btn.btn-large{type: 'submit', value: 'Search'}
+
+.searchResults

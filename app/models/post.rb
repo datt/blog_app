@@ -16,5 +16,13 @@ class Post < ActiveRecord::Base
   validates :author, presence: true, length: { minimum: 5 }
   validates :text, presence: true, length: { minimum: 5 }
 
+  searchable do
+    text :title, :text
+    text :comments do
+      comments.map { |comment| comment.body }
+    end
 
+    time :created_at
+    time :updated_at
+  end
 end
