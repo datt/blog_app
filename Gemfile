@@ -32,6 +32,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+gem 'sunspot_rails', '2.1.1'
+gem 'sunspot_solr', '2.1.1'
+gem 'annotate', '2.6.5'
+gem 'faker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
