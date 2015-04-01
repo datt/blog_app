@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
 
-	def new 
+	def new
     @post = Post.new
   end
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.sort_by{|c| c.body.length}.reverse
   end
 
   def destroy

@@ -1,0 +1,7 @@
+%li
+  %strong Commenter:
+  = comment.commenter
+  .comment
+    %strong Comment:
+    = comment.body
+    = link_to 'Remove', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?'}

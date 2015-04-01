@@ -1,0 +1,13 @@
+<script id="underscoreCommentTemplate" type="text/html">
+  <%% _.each(comments, function(comment, index){ %>
+    <li>
+      <strong>Commenter:</strong>
+      <%%= comment.commenter %>
+      <div class="comment">
+        <strong>Comment:</strong>
+        <%%= comment.body %>
+        <a data-confirm="Are you sure?", data-method= "delete", href="/posts/<%%= comment.post_id %>/comments/<%%= comment.id %>" rel="nofollow"> Remove</a>
+      </div>
+    </li>
+  <%% }); %>
+</script>
